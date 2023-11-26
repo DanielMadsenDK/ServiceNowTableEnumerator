@@ -1,4 +1,4 @@
-# ServiceNowTableEnumerator
+# ServiceNow Table Enumerator
 
 Utility for scanning tables in a ServiceNow instance for widget security misconfigurations causing dataleaks. Scanning the instance does not require an authenticated user.
 
@@ -25,3 +25,7 @@ dotnet publish -f net8.0-windows10.0.19041.0 -c Release
 ## Remediation
 
 Follow the official remediation advice by ServiceNow in [KB1553688](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB1553688)
+
+## Credits
+
+This utility is based on the reseach made by Aaron Costello (Twitter @ConspiracyProof)
