@@ -2,6 +2,8 @@
 
 Utility for scanning tables in a ServiceNow instance for widget security misconfigurations causing dataleaks. Scanning the instance does not require an authenticated user.
 
+![User interface](/tableEnumeration.png)
+
 ## Build
 
 You can build the solution by using the command in the .NET CLI:
