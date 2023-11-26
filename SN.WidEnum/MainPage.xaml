@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SN.WidEnum"
+             x:Class="SN.WidEnum.MainPage">
+              <ContentPage.Resources>
+                <local:ColorValueConverter x:Key="colorValue" />
+            </ContentPage.Resources>
+            <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="110" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <VerticalStackLayout Grid.Row="0" Spacing="10">
+                <Label
+                    Text="ServiceNow Table Enumerator"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="32"
+                    HorizontalOptions="Center" />
+                <Entry x:Name="InstanceTxt"
+                        Placeholder="Instance url. For example: https://dev.service-now.com/">
+                </Entry>
+            </VerticalStackLayout>
+            <ListView
+                x:Name="TablesListView"
+                BackgroundColor="Transparent"
+                SeparatorColor="Silver"
+                ItemsSource="{Binding Tables}"
+                Grid.Row="1">
+                    <ListView.Header>
+                        <StackLayout BackgroundColor="OrangeRed">
+                            <Label Margin="10,0,0,0"
+                                Text="Tables"
+                                FontSize="16"
+                                FontAttributes="Bold" />
+                        </StackLayout>
+                    </ListView.Header>
+                <ListView.ItemTemplate>
+                <DataTemplate>
+                 <ViewCell>
+                    <Label Margin="0,10,0,0" FontSize="14" Text="{Binding Name}" BackgroundColor="{Binding ScanResult, Converter={StaticResource colorValue}}"></Label>
+                     </ViewCell>
+                </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <VerticalStackLayout Grid.Row="2" Spacing="10" Margin="0,20,0,0" >
+            <Label
+                Text="Edit the tables.cfg file to add/remove tables to scan."
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center" /> 
+            <Button
+                x:Name="ScanBtn"
+                Text="Scan"
+                Clicked="OnScanClicked"
+                HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                </Grid>
+</ContentPage>
