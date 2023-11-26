@@ -22,3 +22,6 @@ dotnet publish -f net8.0-windows10.0.19041.0 -c Release
  
 - A summary will be presented at the end of the scan. You can verify the amount of affected tables.
 
+## Remediation
+
+Follow the official remediation advice by ServiceNow in [KB1553688](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB1553688)
