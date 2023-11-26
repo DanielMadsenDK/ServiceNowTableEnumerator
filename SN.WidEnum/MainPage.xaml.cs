@@ -29,6 +29,7 @@ public partial class MainPage : ContentPage
 		}
 		else
 		{
+			//setup defalut tables if cfg file is not found
 			Tables = new ObservableCollection<Table> {
 				new() { Name = "sys_attachment" },
 				new() { Name = "survey_question_new" },
